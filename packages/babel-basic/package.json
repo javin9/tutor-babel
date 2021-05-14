@@ -1,0 +1,36 @@
+{
+  "name": "babel-basic",
+  "version": "1.0.0",
+  "description": "命令方式使用",
+  "keywords": [
+    "basic"
+  ],
+  "author": "rupid <liujianwei1213@163.com>",
+  "homepage": "https://github.com/rupid/tutor-babel/tree/main/packages/tutor-basic#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://r.cnpmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rupid/tutor-babel.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/rupid/tutor-babel/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.2"
+  }
+}

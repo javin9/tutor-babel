@@ -4,7 +4,8 @@
   "description": "介绍babel全家桶",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "docsify serve docs"
   },
   "repository": {
     "type": "git",
@@ -14,12 +15,15 @@
     "babel",
     "tutor",
     "lerna",
-    "docisfy"
+    "docsify"
   ],
   "author": "liujianwei",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rupid/tutor-babel/issues"
   },
-  "homepage": "https://github.com/rupid/tutor-babel#readme"
+  "homepage": "https://github.com/rupid/tutor-babel#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
 }
