@@ -24,13 +24,15 @@
     "url": "git+https://github.com/rupid/tutor-babel.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "babel lib/index.js --out-file dist/index.js"
   },
   "bugs": {
     "url": "https://github.com/rupid/tutor-babel/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.14.2"
+    "@babel/core": "^7.14.2",
+    "@babel/preset-env": "^7.14.2"
   }
 }
