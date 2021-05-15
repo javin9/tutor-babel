@@ -6,9 +6,11 @@
  * @LastEditors: liujianwei1
  * @Reference Desc: 
 -->
+## 官方文档地址
+[传送门](https://babeljs.io/docs/en/config-files)
 
-### [配置文件类型](https://babeljs.io/docs/en/config-files)
-Babel 有两种并行的配置文件格式，可以一起使用，也可以单独使用。
+## 配置文件类型
+Babel 有两种并行的配置文件方式，可以一起使用，也可以单独使用。
 - 项目范围的配置(Project-wide)
 - 文件相关的配置(File-relative)
   - `.babelrc`（和 `.babelrc.js`）文件
@@ -19,7 +21,7 @@ Babel 有两种并行的配置文件格式，可以一起使用，也可以单�
 | `v7.8.0`     | 支持 `.babelrc.mjs` , `babel.config.mjs`       |
 | `v7.7.0`  | 支持 `.babelrc.json`, `.babelrc.cjs`, `babel.config.json`, `babel.config.cjs`|
 
-### 项目范围的配置
+## 项目范围的配置
 Babel 7.x 中的新功能，Babel 具有 "root" 目录的概念，"root"目录默认为`当前的工作目录`。编译时，`Babel`将自动搜索相对于此根目录下的`babel.config.js`文件，或其Babel认可的文件，比如：`babel.config.json`,`babel.config.cjs`,`babel.config.mjs`等
 
 ##### 优点
@@ -60,3 +62,25 @@ module: {
 }
 ```
 详细内容可以参考[官方文档的演示](https://babeljs.io/docs/en/config-files#monorepos)
+
+## 文件相关配置x
+编译时，Babel 从 正在被编译的 文件 所在的 目录开始 去搜索 `.babelrc.json`或其他Babel认可的配置文件。比如：`babelrc`,`.babelrc.js`,`/package.json＃babel`。 有了这个功能，就可以为 package的子模块 创建独立的配置。
+同时，`文件相关配置`和`项目相关配置`可以共同使用。下面是官方的解释：
+>  File-relative configurations are also merged over top of project-wide config values, making them potentially useful for specific overrides, though that can also be accomplished through "overrides".  
+
+通俗的翻译就是以下两点：
+- 不同的配置：文件相关配置 和 项目相关配置 可以合并到一起
+- 相同的配置：文件相关配置 会覆盖 项目相关配置
+```bash
+babel.config.js
+package.json
+packages/
+  mod1/
+    package.json
+    src/index.js
+    .babelrc
+  mod2/
+    package.json
+    src/index.js
+    .babelrc
+```

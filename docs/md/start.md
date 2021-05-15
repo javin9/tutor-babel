@@ -11,10 +11,10 @@
 这里先配置一个最简单的Babel编译工程，熟悉一下整个过程。
 
 ### 源码地址
-[babel-basic 传送门](https://github.com/rupid/tutor-babel/tree/master/packages/babel-basic)
+[tutor-basic 传送门](https://github.com/rupid/tutor-babel/tree/master/packages/babel-basic)
 
 ### 安装
-初始化项目 `babel-basic`。 安装npm包
+初始化名为 `tutor-basic`项目。 安装npm包
 ```bash
 npm install --save-dev @babel/core @babel/cli @babel/preset-env
 ```
