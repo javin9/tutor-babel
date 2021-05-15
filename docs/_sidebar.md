@@ -1,17 +1,10 @@
 
-- Babel简介
- - [Babel是什么](/md/01_start.md)
- - [platform](/tool-core/platform.md)
+- Babel介绍
+ - [Babel是什么](/md/guide.md)
+ - [Babel版本](/md/version.md)
+ - [快速开始](/md/start.md)
 
-- @tool/common 
- - [deal-price-point](/tool-common/deal-price-point.md)
- - [request](/tool-common/request.md)
+- [Babel配置文件](/md/configuration.md)
 
-- @tool/log 
- - [yiketoolLog](/tool-log/yiketoolLog.md)
-
-- [@tool/style](/tool-style/index.md) 
- - [reset](/tool-style/reset.md)
- - [yike-tool-mixin](/tool-style/mixins.md)
  
-- [参考文献]()
+- [参考文献](/md/reference.md)
