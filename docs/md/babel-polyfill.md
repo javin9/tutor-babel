@@ -10,9 +10,13 @@
 [官网传送门](https://babeljs.io/docs/en/babel-polyfill)
 > 已经在 `Babel@7.4.*`废弃了。`@babel/preset-env`会提到
 
-虽然 @babel/polyfill 已经在 `Babel@7.4.*`废弃了，因为@babel/polyfill本身其实就是两个npm包的集合：`core-js`与`regenerator-runtime`。但是还是有必要讲解一下。
+@babel/polyfill是`core-js`和`regenerator-runtime`两个npm包的集合。
 
-### 手动打补丁
+core-js最新的版本是3.x.x 。`@babel/polyfill`依赖的core-js是2.x.x版本，core-js@2版本缺少了一些功能。比如Array.prorotype.includes。所以，从Babel@7.4.x就不在推荐使用@babel/polyfill了。
+
+但我们仍然把传统@babel/polyfill的使用方式在本节进行讲解，这对于理解其使用方式是非常有帮助的
+
+接下来看一下如何使用：
 #### 方法1：直接在html文件中引入Babel的polyfill.js文件
 [源代码地址](https://github.com/rupid/tutor-babel/tree/master/packages/tutor-polyfill01)
 ```html
@@ -78,6 +82,11 @@ html部分
 #### 方法3：项目构建入口引入@babel/polyfill
 [源码地址](https://github.com/rupid/tutor-babel/tree/master/packages/tutor-polyfill03)
 
+安装@babel/polyfill
+```bash
+npm i @babel/polyfill
+```
+
 主要代码部分
 ```js
 import "@babel/polyfill"
@@ -89,11 +98,6 @@ console.log(promise)
 安装webpack，webpack-cli
 ```bash
   npm install webpack webpack-cli -D
-```
-
-安装@babel/polyfill
-```bash
-npm i @babel/polyfill
 ```
 
 在package.json里面，添加运行脚本。并运行`npm run build`
@@ -176,3 +180,32 @@ html部分
 ```
 
 #### 方法5：前端工程构建工具的配置文件入口里引入
+
+[源码地址](https://github.com/rupid/tutor-babel/tree/master/packages/tutor-polyfill05)  
+
+这种方法对应三种不同的入口文件，这里为了节省篇幅，只拿@babel/polyfill方式做演示
+
+```js
+const path = require('path')
+module.exports = {
+  // entry: ['./src/polyfill.js', './src/index.js'],  第一种：直接引入源文件
+  entry: ['@babel/polyfill', './src/index.js'], //第二种：@babel/polyfill
+  // entry: ['core-js/stable', 'regenerator-runtime/runtime', './src/index.js'], //第三种
+  output: {
+    filename: "./dist/main.js",
+    path: path.resolve(__dirname, '')
+  }
+}
+```
+
+在package.json里面，添加运行脚本。并运行`npm run build`
+```bash
+"scripts": {
+    "build": "webpack"
+}
+```
+
+### 总结：
+以上在前端工程入口文件或构建工具的配置文件里使用polyfill（或是其子包）的方式都属于`手动打补丁`方式，这种方式把整个npm包或polyfill.js塞到了项目中，由于polyfill文件非常大，所以会影响页面首屏时间。真实的项目中一般不会采用此方式，不过可以部分引入。
+
+下一节我们会讲@babel/preset-env，这种打补丁的方式属于 按需编译和按需打补丁
