@@ -65,14 +65,6 @@ console.log(promise)
 ```
 html部分
 ```html
-<!--
- * @Desc: 
- * @FilePath: /tutor-babel/packages/tutor-polyfill02/index.html
- * @Author: liujianwei1
- * @Date: 2021-05-17 13:25:13
- * @LastEditors: liujianwei1
- * @Reference Desc: 
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,3 +82,48 @@ html部分
 </html>
 ```
 
+#### 方法3：项目构建入口引入@babel/polyfill
+[源码地址](https://github.com/rupid/tutor-babel/tree/master/packages/tutor-polyfill03)
+
+主要代码部分
+```js
+import "@babel/polyfill"
+
+var promise = Promise.resolve('hello babel')
+console.log(promise)
+```
+
+安装webpack，webpack-cli
+```bash
+  npm install webpack webpack-cli -D
+```
+
+安装@babel/polyfill
+```bash
+npm i @babel/polyfill
+```
+
+在package.json里面，添加运行脚本。并运行`npm run build`
+```bash
+"scripts": {
+    "build": "webpack  --entry ./src/index.js  --mode development  --output-path ./dist/"
+}
+```
+html部分
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./dist/main.js"></script>
+</body>
+
+</html>
+```
