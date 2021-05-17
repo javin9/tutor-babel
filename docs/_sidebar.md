@@ -5,8 +5,8 @@
 
 - [Babel配置文件](/md/configuration.md)
 - [插件和预设](/md/plugin-and-presets.md)
-- 实战
-  -- [@babel/polyfill](/md/polyfill.md)
+- Polyfill
+  - [@babel/polyfill](/md/polyfill.md)
 
 
 

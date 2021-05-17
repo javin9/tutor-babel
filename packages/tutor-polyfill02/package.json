@@ -1,0 +1,33 @@
+{
+  "name": "tutor-polyfill02",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "rupid <liujianwei1213@163.com>",
+  "homepage": "https://github.com/rupid/tutor-babel/tree/main/packages/tutor-polyfill02#readme",
+  "license": "ISC",
+  "main": "lib/tutor-polyfill02.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://r.cnpmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rupid/tutor-babel.git"
+  },
+  "scripts": {
+    "build": "webpack  --entry ./src/index.js  --mode development  --output-path ./dist/"
+  },
+  "bugs": {
+    "url": "https://github.com/rupid/tutor-babel/issues"
+  },
+  "devDependencies": {
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  }
+}

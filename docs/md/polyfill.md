@@ -21,7 +21,7 @@
 三种方式可以独立使用，也可以相互组合，下面我们详细介绍三种打补丁的方式
 ### 手动打补丁
 #### 方法1：直接在html文件中引入Babel的polyfill.js文件
-[源代码地址]()
+[源代码地址](https://github.com/rupid/tutor-babel/tree/master/packages/tutor-polyfill01)
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -41,5 +41,6 @@
 </html>
 ```
 
-#### 方法2：
+#### 方法2：项目构建入门引入polyfill.js
+
 
