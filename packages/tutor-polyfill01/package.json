@@ -1,11 +1,11 @@
 {
-  "name": "@tutor/polyfill",
+  "name": "tutor-polyfill01",
   "version": "1.0.0",
-  "description": "polyfill tutor",
+  "description": "> TODO: description",
   "author": "rupid <liujianwei1213@163.com>",
-  "homepage": "https://github.com/rupid/tutor-babel/tree/main/packages/tutor-polyfill#readme",
+  "homepage": "https://github.com/rupid/tutor-babel/tree/main/packages/tutor-polyfill01#readme",
   "license": "ISC",
-  "main": "lib/tutor-polyfill.js",
+  "main": "lib/tutor-polyfill01.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -25,10 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/rupid/tutor-babel/issues"
-  },
-  "dependencies": {
-    "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.14.2",
-    "@babel/preset-env": "^7.14.2"
   }
 }

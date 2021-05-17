@@ -63,7 +63,7 @@ module: {
 ```
 详细内容可以参考[官方文档的演示](https://babeljs.io/docs/en/config-files#monorepos)
 
-## 文件相关配置x
+## 文件相关配置
 编译时，Babel 从 正在被编译的 文件 所在的 目录开始 去搜索 `.babelrc.json`或其他Babel认可的配置文件。比如：`babelrc`,`.babelrc.js`,`/package.json＃babel`。 有了这个功能，就可以为 package的子模块 创建独立的配置。
 同时，`文件相关配置`和`项目相关配置`可以共同使用。下面是官方的解释：
 >  File-relative configurations are also merged over top of project-wide config values, making them potentially useful for specific overrides, though that can also be accomplished through "overrides".  
