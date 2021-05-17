@@ -155,7 +155,94 @@ useBuiltIns的取值 决定了`@babel/preset-env`如何处理`polyfill`
 - 取值为"entry"或"usage"的时候，会根据配置的目标环境找出需要的polyfill进行部分引入
 
 ### entry
-[源代码地址]()
+[源代码地址](https://github.com/rupid/tutor-babel/tree/master/packages/tutor-preset_env02)  
+Babel配置
+```json
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ]
+  ]
+}
+```
+
+安装npm包
+```bash
+  npm install --save-dev @babel/cli @babel/core  @babel/preset-env
+  npm install --save @babel/polyfill
+```
+
+useBuiltIns的取值为entry的之后，需要手动的显示导入`@babel/polyfill`(或者在 webpack的entry入口导入)。
+```javascript
+//导入 
+import '@babel/polyfill'
+
+var promise = Promise.resolve('babel useBuiltIns entry demo')
+console.log(promise)
+```
+
+browserslist配置
+```
+chrome 90
+```
+运行`npm run build`
+```bash
+> $ npm run build                                                                                                                                                     ⬡ 12.21.0 [±master ●]
+
+> tutor-preset_env02@1.0.0 build /Users/liujianwei/Documents/personal_code/tutor-babel/packages/tutor-preset_env02
+> babel ./src/index.js --out-file ./dist/index.js
+
+
+WARNING (@babel/preset-env): We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+More info about useBuiltIns: https://babeljs.io/docs/en/babel-preset-env#usebuiltins
+More info about core-js: https://babeljs.io/docs/en/babel-preset-env#corejs
+                                                                               
+```
+chrome 60 编译结果：
+```bash
+"use strict";
+
+require("core-js/modules/web.timers.js");
+
+require("core-js/modules/web.immediate.js");
+
+require("core-js/modules/web.dom.iterable.js");
+
+var promise = Promise.resolve('babel useBuiltIns entry demo');
+console.log(promise);
+
+```
+Babel针对Chrome 90 不支持的API特性进行引用，一共引入了3个core-js的API补齐模块。同时也可以看到，因为Chrome 90已经支持Promise特性，所以没有引入promise相关的API补齐模块。
+
+下面修改browserslist里chrome 32。运行`npm run build`
+
+chrome 32编译结果：
+```javascript
+"use strict";
+
+....
+
+require("core-js/modules/es6.promise.js");
+
+require("core-js/modules/es7.promise.finally.js");
+...
+...
+require("regenerator-runtime/runtime.js");
+
+var promise = Promise.resolve('babel useBuiltIns entry demo');
+console.log(promise);
+```
+由于引用太多，这里只显示了部分。可以看到 promise的API被引入了
 
 
 
