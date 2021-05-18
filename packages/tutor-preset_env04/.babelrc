@@ -3,6 +3,7 @@
     [
       "@babel/preset-env",
       {
+        // "corejs": 2,//默认值为2
         "useBuiltIns": "usage"
       }
     ]
