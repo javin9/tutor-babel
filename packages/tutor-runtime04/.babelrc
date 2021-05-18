@@ -8,8 +8,8 @@
     [
       "@babel/plugin-transform-runtime",
       {
-        //这里使用的2版本
-        "corejs": 2
+        //这里使用的3版本
+        "corejs": 3
       }
     ]
   ]

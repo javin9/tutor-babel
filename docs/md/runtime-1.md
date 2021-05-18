@@ -1,6 +1,6 @@
 <!--
  * @Desc: 
- * @FilePath: /tutor-babel/docs/md/runtime.md
+ * @FilePath: /tutor-babel/docs/md/runtime-1.md
  * @Author: liujianwei1
  * @Date: 2021-05-18 15:06:35
  * @LastEditors: liujianwei1
@@ -13,7 +13,7 @@
 
 问题我们暂且搁置一下，我们先看一下一个代码演示  
 
-[源代码地址](https://github.com/rupid/tutor-babel/tree/main/packages/tutor-runtime01)  
+[源代码地址tutor-runtime01](https://github.com/rupid/tutor-babel/tree/main/packages/tutor-runtime01)  
 安装npm包
 ```bash
 npm install --save-dev @babel/cli @babel/core  @babel/preset-env 
@@ -74,7 +74,7 @@ function _foo() {
 ***
 ### 如何使用`@babel/runtime`
 
-[源代码地址](https://github.com/rupid/tutor-babel/tree/main/packages/tutor-runtime02)
+[源代码地址tutor-runtime02](https://github.com/rupid/tutor-babel/tree/main/packages/tutor-runtime02)
 上面我们提到，`@babel/runtime`包含了所有辅助函,实际开发中，不可能手动引入`@babel/runtime/helpers`里面的辅助函数。需要借助`@babel/plugin-transform-runtime`。`@babel/plugin-transform-runtime`完成
 - 自动移除语法转换后内联的辅助函数
 - 引入`@babel/runtime/helpers`里的辅助函数来替代辅助函数

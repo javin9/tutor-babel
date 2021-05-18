@@ -2,6 +2,8 @@
 
 require("core-js/modules/es.array.flat.js");
 
+require("core-js/modules/es.promise.js");
+
 /*
  * @Desc:
  * @FilePath: /tutor-babel/packages/tutor-preset_env06/src/index.js
@@ -12,3 +14,4 @@ require("core-js/modules/es.array.flat.js");
  */
 const arr1 = [0, 1, 2, [3, 4]];
 console.log(arr1.flat());
+Promise.resolve('ddd');
