@@ -2,6 +2,6 @@
 
 # 手把手教你如何配置Babel
 
-> 喜欢的记得点个star
+> 配置Babel基础教程
 
 [Getting Started](README.md)
