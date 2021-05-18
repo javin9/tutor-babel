@@ -1,7 +1,7 @@
 
 
-# 零基础了解Babel
+# 手把手教你如何配置Babel
 
-> 编译是 Babel 的核心目标
+> 喜欢的记得点个star
 
 [Getting Started](README.md)

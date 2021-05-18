@@ -10,12 +10,12 @@
 >@babel/preset-env is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). This both makes your life easier and JavaScript bundles smaller!
 
 
-翻译过来就是`@babel/preset-env`会根据目标环境来进行语法转换和打补丁。具体来讲，是根据参数 targets 来确定目标环境，默认情况下它编译为ES2015，可以根据项目需求进行配置：
+翻译过来就是`@babel/preset-env`会根据目标环境来进行语法转换和打补丁。例如下面配置：
 ```json
 {
   "presets": [
     [
-      "@babel/preset-env",
+      "@babel/preset-env",//> @babel/env是@babel/preset-env的简写
       {
         //https://babeljs.io/docs/en/babel-preset-env#targets
         "targets": "defaults"
@@ -24,11 +24,9 @@
   ]
 }
 ```
-> @babel/env是@babel/preset-env的简写
 
 
-
-在[快速开始](./start.md) 章节中，我们使用了`@babel/preset-env`展示了语法转换。本节，我们继续学习 通过配置参数项的方式 去做语法转换和按需打补丁
+在[快速开始](./start.md) 章节中，我们使用了`@babel/preset-env`展示了语法转换。本节，我们继续学习 通过配置参数项的方式去做语法转换和按需打补丁
 
 最新的`@babel/preset-env` 参数总共有15个，我们重点学习四个：
 - `targets`
@@ -450,7 +448,45 @@ console.log(arr1.flat());
 直接使用`core-js@3`的结果，同`@babel/polyfill`+`core-js@3`是同样的效果。
 
 
+***
+***
+***
+## modules
+`"amd" | "umd" | "systemjs" | "commonjs" | "cjs" | "auto" | false, defaults to "auto"`默认值是`auto`。该项用来设置是否把ES6的模块化语法改成其它模块化语法。
 
+我们常见的模块化语法有两种：
+- ES6的模块法语法---import与export
+- commonjs模块化语法---require与module.exports
+前几个例子中，没有设置`modules`,代码编译之后，`import`被替换成了`require`。
 
+如果将参数项改成false，那么就不会对ES6模块化进行更改，还是使用import引入模块。  
+[源代码地址tutor-preset_env07](https://github.com/rupid/tutor-babel/tree/main/packages/tutor-preset_env07)  
+babel配置如下
+```json
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "corejs": 3, //指定3版本
+        "useBuiltIns": "usage",
+        "modules":false
+      }
+    ]
+  ]
+}
+```
+安装 npm
+```bash
+ npm i @babel/core @babel/cli @babel/preset-env
+ npm i core-js@3 
+```
+编译后的结果：
+```javascript
+import "core-js/modules/es.array.flat.js";
+const arr1 = [0, 1, 2, [3, 4]];
+console.log(arr1.flat());
+```
+使用ES6模块化语法有什么好处?  
 
-
+在使用Webpack一类的打包工具，可以进行静态分析，从而可以做[Tree-Shaking](https://www.webpackjs.com/guides/tree-shaking/) 等优化措施
