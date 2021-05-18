@@ -490,3 +490,5 @@ console.log(arr1.flat());
 使用ES6模块化语法有什么好处?  
 
 在使用Webpack一类的打包工具，可以进行静态分析，从而可以做[Tree-Shaking](https://www.webpackjs.com/guides/tree-shaking/) 等优化措施
+
+以上的内容 配置的Babel足以解决业务类型的项目了。 如果你想 发布一个npm包给别人用，还需要了解下一个小节讲解的 `@babel/runtime`和`@babel/plugin-transform-runtime`

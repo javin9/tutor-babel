@@ -8,9 +8,10 @@
 - [插件和预设](/md/plugin-and-presets.md)
 
 - Polyfill
-  - [什么事Polyfill](/md/polyfill.md)
+  - [什么是Polyfill](/md/polyfill.md)
   - [@babel/polyfill](/md/babel-polyfill.md)
   - [@babel/preset-env](/md/preset-env.md)
-  - [@babel/plugin-transform-runtime](/md/runtime.md)
+  - [@babel/runtime](/md/runtime-1.md)
+  - [@babel/plugin-transform-runtime](/md/runtime-2.md)
 
 - [参考文献](/md/reference.md)
