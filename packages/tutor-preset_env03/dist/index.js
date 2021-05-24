@@ -1,7 +1,5 @@
 "use strict";
 
-require("core-js/modules/es6.array.copy-within.js");
-
 /*
  * @Desc: 
  * @FilePath: /tutor-babel/packages/tutor-preset_env03/src/index.js
@@ -13,6 +11,6 @@ require("core-js/modules/es6.array.copy-within.js");
 //新的语法
 //这里不需要手动导入 @babel/polyfill
 //新的语法
-var array1 = ['a', 'b', 'c', 'd', 'e'];
+const array1 = ['a', 'b', 'c', 'd', 'e'];
 console.log(array1.copyWithin(0, 3, 4));
 console.log(array1.copyWithin(1, 3));

@@ -7,19 +7,19 @@
  * @Reference Desc: 
 -->
 ### 什么是Babel
-借用[官方](https://babeljs.io/)一句简短的介绍：
+[官方](https://babeljs.io/)一句简短的介绍：
 ```bash
 Babel is a JavaScript compiler.
 ```
+直白的翻译就是，Babel是一个Javascript编译器
 
 ### 为什么要编译
 究其原因，前端语言特性和宿主环境(浏览器/Node.js)高速发展，宿主环境无法及时支持新的语言特性。因此开发者需要兼容各种宿主环境。  
 有了Babel之后，在项目中完全可以用最新的Javascript语言特性(例如：ES6)编写程序，最后，Babel根据宿主环境，对代码降级处理。
 
-### 总结
-Babel编译代码时，会依据配置中的 `preset`和`plugin` 注入一些模块依赖，对代码降级处理。可以简单的概括为两部分：
-- 语法转换 比如：箭头函数语法、async函数语法、class定义类语法和解构赋值等等都是ES6新增的语法。
-- 补齐新的API   比如：`Array.prototype.includes`,`Array.prototype.flatMap()`,`String.prorotype.includes`,`Promise`、`Map`、`Symbol`、`Proxy`、`Iterator`等
+Babel编译代码时，会依据配置中的 `preset`和`plugin` 根据目标环境(`browserslist`)，注入一些模块依赖，对代码降级处理。可以简单的概括为两部分：
+- **语法转换**——例如：箭头函数语法、async函数语法、class定义类语法、解构赋值等等都是ES6新增的语法。
+- **补齐新的API**——例如：`Array.prototype.includes`,`Array.prototype.flatMap()`,`String.prorotype.includes`,`Promise`、`Map`、`Symbol`、`Proxy`、`Iterator`等
 
 ### 小试牛刀
 [在线测试地址](https://babeljs.io/repl)   

@@ -1,11 +1,22 @@
-- 介绍
- - [Babel是什么](/md/guide.md)
+<!--
+ * @Desc: 
+ * @FilePath: /tutor-babel/docs/_sidebar.md
+ * @Author: liujianwei1
+ * @Date: 2021-05-14 11:35:46
+ * @LastEditors: liujianwei1
+ * @Reference Desc: 
+-->
+- [介绍](./README.md)
+ - [什么是Babel](/md/guide.md)
  - [Babel版本](/md/version.md)
+ - [@babel/core](/md/core.md)
+ - [@babel/cli](/md/cli.md)
  - [快速开始](/md/start.md)
 
+- [插件和预设](/md/plugin-and-presets.md)
 - [Babel配置文件](/md/configuration.md)
 
-- [插件和预设](/md/plugin-and-presets.md)
+
 
 - Polyfill
   - [什么是Polyfill](/md/polyfill.md)
@@ -13,5 +24,6 @@
   - [@babel/preset-env](/md/preset-env.md)
   - [@babel/runtime](/md/runtime-1.md)
   - [@babel/plugin-transform-runtime](/md/runtime-2.md)
+
 
 - [参考文献](/md/reference.md)
