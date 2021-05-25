@@ -6,45 +6,31 @@
  * @LastEditors: liujianwei1
  * @Reference Desc: 
 -->
-### 什么是Babel
-[官方](https://babeljs.io/)一句简短的介绍：
 ```bash
 Babel is a JavaScript compiler.
 ```
-直白的翻译就是，Babel是一个Javascript编译器
+Babel是一个Javascript编译器 
+
 
 ### 为什么要编译
-究其原因，前端语言特性和宿主环境(浏览器/Node.js)高速发展，宿主环境无法及时支持新的语言特性。因此开发者需要兼容各种宿主环境。  
-有了Babel之后，在项目中完全可以用最新的Javascript语言特性(例如：ES6)编写程序，最后，Babel根据宿主环境，对代码降级处理。
+究其原因，前端语言特性(esnext、typescript、flow等)和宿主环境(浏览器/Node.js)高速发展，宿主环境无法及时支持新的语言特性。因此，需要把新的语言特性降级处理，转换成目标环境支持的语法，并且对目标环境不支持的API添加Polyfill 
 
-Babel编译代码时，会依据配置中的 `preset`和`plugin` 根据目标环境(`browserslist`)，注入一些模块依赖，对代码降级处理。可以简单的概括为两部分：
-- **语法转换**——例如：箭头函数语法、async函数语法、class定义类语法、解构赋值等等都是ES6新增的语法。
-- **补齐新的API**——例如：`Array.prototype.includes`,`Array.prototype.flatMap()`,`String.prorotype.includes`,`Promise`、`Map`、`Symbol`、`Proxy`、`Iterator`等
+Babel对代码降级处理，可以概括为两部分：
+- **语法转换**——例如：箭头函数语法、async函数语法、class定义类语法、解构赋值等。
+- **补齐新的API**——例如：`Array.prototype.includes`,`String.prorotype.includes`,`Promise`、`Map`、`Symbol`等
 
-### 小试牛刀
-[在线测试地址](https://babeljs.io/repl)   
-ES6中 `let`、`const`、`箭头函数`转换成ES5
-```javascript
-let number1=10
-let number2=20
-const sum=(num1,num2)=> num1+num2
-// Promise.resolve('God is with you');
-```
+### Babel的编译流程
 
-编译之后结果：
+Babel是`源代码`到`目标环境源代码`的转换，仍然是高级语言到高级语言的转换，整个过程可分为三个阶段：
+- 解析（parse）—— 通过`@babel/parser`把源代码字符串转成抽象语法树(AST)
+- 转换（transform）——通过`@babel/traverse`遍历抽象语法树(AST),并调用Babel配置文件中的插件,对抽象语法树(AST)进行增删改
+- 生成（generate）——通过`@babel/generator`把转换后的抽象语法书(AST)生成目标代码
 
-```javascript
-"use strict";
+![d](../_media/guocheng.jpeg)
 
-var number1 = 10;
-var number2 = 20;
+如何书写Babel的配置文件，产出最优的编译结果？
 
-var sum = function sum(num1, num2) {
-  return num1 + num2;
-};
-```
-- `let`,`const` 变成了`var`
-- 箭头函数变成了带有`function`的普通函数
+
 
 
 

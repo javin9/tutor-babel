@@ -21,3 +21,4 @@
 - Monorepo  
   - [Monorepo](https://zhuanlan.zhihu.com/p/77577415)
   - [使用 MonoRepo 管理你的前端项目](https://zhuanlan.zhihu.com/p/333021512)
+  - [NPM 模块中的scope](https://www.jianshu.com/p/ac5b5f65320b)

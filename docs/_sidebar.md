@@ -6,14 +6,11 @@
  * @LastEditors: liujianwei1
  * @Reference Desc: 
 -->
-- [介绍](./README.md)
- - [什么是Babel](/md/guide.md)
- - [Babel版本](/md/version.md)
- - [@babel/core](/md/core.md)
- - [@babel/cli](/md/cli.md)
- - [快速开始](/md/start.md)
-
+- [开始](./README.md)
+- [什么是Babel](/md/guide.md)
 - [插件和预设](/md/plugin-and-presets.md)
+- [快速开始](/md/start.md)
+
 - [Babel配置文件](/md/configuration.md)
 
 
@@ -25,5 +22,7 @@
   - [@babel/runtime](/md/runtime-1.md)
   - [@babel/plugin-transform-runtime](/md/runtime-2.md)
 
-
+- 其他
+ - [@babel/core](/md/core.md)
+ - [@babel/cli](/md/cli.md)
 - [参考文献](/md/reference.md)
