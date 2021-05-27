@@ -9,9 +9,10 @@
 - [开始](./README.md)
 - [什么是Babel](/md/guide.md)
 - [插件和预设](/md/plugin-and-presets.md)
+- [配置文件](/md/configuration.md)
 - [快速开始](/md/start.md)
+- [core-js](/md/core-js.md)
 
-- [Babel配置文件](/md/configuration.md)
 
 
 
