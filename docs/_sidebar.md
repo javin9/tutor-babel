@@ -13,9 +13,6 @@
 - [快速开始](/md/start.md)
 - [core-js](/md/core-js.md)
 
-
-
-
 - Polyfill
   - [什么是Polyfill](/md/polyfill.md)
   - [@babel/polyfill](/md/babel-polyfill.md)
@@ -24,6 +21,6 @@
   - [@babel/plugin-transform-runtime](/md/runtime-2.md)
 
 - 其他
- - [@babel/core](/md/core.md)
- - [@babel/cli](/md/cli.md)
+  - [@babel/core](/md/core.md)
+  - [@babel/cli](/md/cli.md)
 - [参考文献](/md/reference.md)
